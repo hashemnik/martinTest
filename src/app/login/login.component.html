@@ -4,9 +4,10 @@
 	Martin Test: <br/>Enter User Name and Password:
 	</md-toolbar> 
 	<md-card-content>
+	<p class="errorMsg">{{errorMessage}}</p>
 	<form (submit)="login($event)">
-		<p class="errorMsg">{{errorMessage}}</p>
 		<md-input [(ngModel)]="loginModel.username" name="username" placeholder="Username" class="form-control"></md-input>
+		<p></p>
 		<md-input [(ngModel)]="loginModel.password" name="paszsword" placeholder="Password" type="password" class="form-control"></md-input>
 		<p>
 			<button md-raised-button id="loginbutton" type="submit" color="accent">Login</button>
