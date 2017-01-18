@@ -1,0 +1,9 @@
+.errorMsg{
+	color:Red;
+}
+md-card {
+  width: 500px;
+  box-sizing: border-box;
+  margin: 16px;
+  
+}

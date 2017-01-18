@@ -1,0 +1,18 @@
+<div class="form" align="center">
+	<md-card class="demo-card demo-basic" align="left"> 
+	<md-toolbar color="primary">
+	Martin Test: <br/>Enter User Name and Password:
+	</md-toolbar> 
+	<md-card-content>
+	<form (submit)="login($event)">
+		<p class="errorMsg">{{errorMessage}}</p>
+		<md-input [(ngModel)]="loginModel.username" name="username" placeholder="Username" class="form-control"></md-input>
+		<md-input [(ngModel)]="loginModel.password" name="paszsword" placeholder="Password" type="password" class="form-control"></md-input>
+		<p>
+			<button md-raised-button id="loginbutton" type="submit" color="accent">Login</button>
+		</p>
+		<md-card-actions></md-card-actions>
+	</form>
+	 </md-card-content> 
+	 </md-card>
+</div>

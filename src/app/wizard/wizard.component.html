@@ -1,0 +1,19 @@
+<div>
+  <p>{{msg}}</p>
+</div>
+<div class="card-container">
+
+	<md-card *ngFor="let subject of subjects">
+		<img md-card-image [alt]="subject.title" src='../assets/subject_{{ (subject.id) }}.jpg' (click)="showMsg(subject)">
+
+		<md-card-content class="secondary">
+			<h2>{{subject.title}}</h2>
+			<h4>{{subject.desc}}</h4>
+		</md-card-content>
+		
+		<md-card-actions align="end">
+			<button md-raised-button color="primary" (click)="showMsg(subject)">Start Process</button>
+		</md-card-actions>
+	</md-card>
+</div>
+
