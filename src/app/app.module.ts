@@ -10,6 +10,7 @@ import { WizardComponent } from './wizard/wizard.component';
 
 import { LoginService } from './login/login.service';
 import { WizardService } from './wizard/wizard.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { WizardService } from './wizard/wizard.service';
   imports: [
     BrowserModule,
     FormsModule,
-
+    ReactiveFormsModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot([
         { path: 'wizard', component: WizardComponent },
