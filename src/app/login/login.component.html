@@ -1,19 +1,35 @@
 <div class="form" align="center">
-	<md-card class="demo-card demo-basic" align="left"> 
-	<md-toolbar color="primary">
-	Martin Test: <br/>Enter User Name and Password:
-	</md-toolbar> 
-	<md-card-content>
+	<md-card class="demo-card demo-basic" align="left"> <md-toolbar
+		color="primary"> Martin Test: <br />
+	Enter User Name and Password: </md-toolbar> <md-card-content>
 	<p class="errorMsg">{{errorMessage}}</p>
-	<form (submit)="login($event)">
-		<md-input [(ngModel)]="loginModel.username" name="username" placeholder="Username" class="form-control"></md-input>
-		<p></p>
-		<md-input [(ngModel)]="loginModel.password" name="paszsword" placeholder="Password" type="password" class="form-control"></md-input>
+	<form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+		<div class="form-group"
+			[ngClass]="{'has-error':!loginForm.controls['user'].valid && loginForm.controls['user'].touched}">
+			
+			<md-input [(ngModel)]="loginModel.username" name="username"
+				placeholder="Username" style="width:100%"
+				[formControl]="loginForm.controls['user']"></md-input>
+			<div
+				*ngIf="loginForm.controls['user'].hasError('required') && loginForm.controls['user'].touched"
+				class="alert alert-danger">You must enter a UserName.</div>
+		</div>
+		<div class="form-group"
+			[ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+			
+			<md-input [(ngModel)]="loginModel.password" name="password"
+				placeholder="Password" type="password" style="width:100%"
+				[formControl]="loginForm.controls['password']"></md-input>
+			<div
+				*ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched"
+				class="alert alert-danger">You must add a password.</div>
+		</div>
+
 		<p>
-			<button md-raised-button id="loginbutton" type="submit" color="accent">Login</button>
+			<button md-raised-button id="loginbutton" type="submit"
+				color="accent">Login</button>
 		</p>
 		<md-card-actions></md-card-actions>
 	</form>
-	 </md-card-content> 
-	 </md-card>
+	</md-card-content> </md-card>
 </div>
