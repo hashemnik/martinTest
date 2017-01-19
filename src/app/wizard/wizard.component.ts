@@ -18,7 +18,7 @@ export class WizardComponent implements OnInit {
   
   showMsg(subject: SubjectModel) {
       this.msg = "You Clicked on '" + subject.title + "' Card!!! Dont ever do this again. ha ha ha ...";
-
+      console.log("card clicked");
   }
   
   
