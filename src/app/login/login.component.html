@@ -3,7 +3,7 @@
 		color="primary"> Martin Test: <br />
 	Enter User Name and Password: </md-toolbar> <md-card-content>
 	<p class="errorMsg">{{errorMessage}}</p>
-	<form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+	<form [formGroup]="loginForm" (ngSubmit)="submitForm()">
 		<div class="form-group"
 			[ngClass]="{'has-error':!loginForm.controls['user'].valid && loginForm.controls['user'].touched}">
 			
