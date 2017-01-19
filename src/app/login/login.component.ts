@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     this.loginModel = new LoginModel('', '');
   }
 
-  submitForm(value: any) {
+  submitForm() {
     this.res = this.loginService.login(this.loginModel);
     if (this.res == true) {
       this.router.navigate(['/wizard']);
